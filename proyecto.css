@@ -1,0 +1,13 @@
+img{
+whidth:200px;
+height:200px;
+border-radius:50%;;
+object-fit: cover;
+}
+contenedor{
+display: flex;
+margin: 60px;
+}
+.secciones{
+display: flex;
+}

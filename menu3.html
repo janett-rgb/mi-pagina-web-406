@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú Lateral Moderno</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8ff;
+h1{
+font-size: 5.5em;
+}
+h1{
+font-size: 4.5em;
+}
+
+    }
+
+    .menu-lateral {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 360px;
+      height: 100vh;
+      background: linear-gradient(180deg, #4B0082, #f0f8ff);
+      color: white;
+      padding-top: 30px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+    }
+
+    .menu-lateral h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #f0f8ff;
+    }
+
+    .menu-lateral ul {
+      list-style: none;
+    }
+
+    .menu-lateral li {
+      border-bottom: 1px solid #333;
+    }
+
+    .menu-lateral a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      transition: background 0.3s;
+    }
+
+    .menu-lateral a:hover {
+      background-color: #444;
+    }
+
+    .menu-lateral a .icon {
+      margin-right: 10px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .submenu {
+      display: none;
+      background-color: #2e2e40;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .submenu a {
+      padding-left: 40px;
+      font-size: 15px;
+    }
+
+    .contenido {
+      margin-left: 360px; /* Ajustado al ancho real del menú */
+      padding: 30px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; height: 0; }
+      to { opacity: 1; height: auto; }
+    }
+
+    .arrow {
+      transition: transform 0.3s;
+    }
+
+    .arrow.rotate {
+      transform: rotate(90deg);
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .galeria img {
+      width: 100%;
+      max-width: 400px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .formulario {
+      max-width: 600px;
+      margin-top: 30px;
+    }
+
+    .formulario input,
+    .formulario textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .formulario button {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .formulario button:hover {
+      background-color: #00ffe5;
+      color: black;
+    }
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .seccion {
+      display: none;
+    }
+
+    .seccion.activa {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu-lateral">
+    <h2><i class="fas fa-globe"></i> Mi Sitio</h2>
+    <ul>
+      <li>
+<center>
+    <img src="logo.jpeg" alt="Cecytem la paz" style="width: 150px; border-radius: 10px; margin-bottom: 10px;">
+</center>
+  <h2><i class="fas fa-globe"></i> Cecytem la paz</h2>
+
+        <a href="#" onclick="mostrarSeccion('inicio')">
+          <i class="fas fa-home icon"></i> Inicio
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick="toggleSubmenu('submenu1', this)">
+          <span><i class="fas fa-cogs icon"></i> Servicios</span>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <ul class="submenu" id="submenu1">
+<div class="menu-lateral">
+  
+          <li><a href="integrantes.html"><i class="fas fa-code icon"></i> GRUPO 406</a></li>
+
+          <li><a href="#"><i class="fas fa-mobile-alt icon"></i> ASESOR: ING DAVID G.C</a></li>
+          <li><a href="#"><i class="fas fa-chart-line icon"></i> CECYTEM</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" onclick="mostrarSeccion('galeria ')">
+          <i class="fas fa-image icon"></i>lugares
+</a>
+      </li>
+      <li>
+        <a href="#" onclick="mostrarSeccion('qys')">
+          <i class="fas fa-envelope icon"></i> QYS
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="contenido">
+    <div id="inicio" class="seccion activa">
+<img src="logo.jpeg" alt="Cecytem la paz" style="width: 90px; border-radius: 10px; margin-bottom: 10px;">
+<center><h1>Bienvenido a Turipaz</h1></center>
+      <h2><p>Este proyecto nace con el proposito de promover la belleza, histori y cultura
+de diversos destinos turisticos dentro de nuestra comunidad.</p></h2>
+<img src="arqueologica3.jpg" alt="zonaarqueologica"><br>
+
+    </div>
+
+    <div id="galeria " class="seccion">
+<img src="logo.jpeg" alt="Cecytem la paz" style="width: 90px; border-radius: 10px; margin-bottom: 10px;">
+
+      <h2>lugares</h2>
+      <div class="galeria">
+       <li><a href="soraya.html"><img src="soraya.jpg" alt="El Deportivo Soraya Jimenez"><br>El Deportivo Soraya Jimenez</a></li>
+<li><a href="zonaarqueologica.html"><img src="arqueologica3.jpg" alt="zonaarqueologica"><br>zona arqueologica</a></li>
+<li><a href="mujer.html"><img src="ciudadmujer2.jpg" alt="Ciudad de la Mujer"><br>Ciudad de la Mujer</a></li>
+<li><a href="ciencia.html"><img src="ciencia.jpeg" alt="El Deportivo Soraya Jimenez"><br>El Deportivo Soraya Jimenez</a></li>
+<li><a href="santamaria.html"><img src="santamaria.jpeg" alt="Templo de Santa Maria Magdalena"><br>ETemplo de Santa Maria Magdalena</a></li>
+
+
+        </div>
+    </div>
+
+    <div id="qys" class="seccion">
+<img src="logo.jpeg" alt="Cecytem la paz" style="width: 90px; border-radius: 10px; margin-bottom: 10px;">
+
+      <h2>Quejas y Sugerencias</h2>
+      <div class="formulario">
+        <form action="#" method="post">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSubmenu(id, el) {
+      const submenu = document.getElementById(id);
+      const arrow = el.querySelector('.arrow');
+      if (submenu.style.display === 'block') {
+        submenu.style.display = 'none';
+      } else {
+        submenu.style.display = 'block';
+      }
+      arrow.classList.toggle('rotate');
+    }
+
+    function mostrarSeccion(id) {
+      document.querySelectorAll('.seccion').forEach(sec => {
+        sec.classList.remove('activa');
+      });
+      document.getElementById(id).classList.add('activa');
+    }
+  </script>
+
+</body>
+</html>
